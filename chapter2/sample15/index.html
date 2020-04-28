@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>タイトルを書き換えよう</title>
+
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+	<div class="frame">
+	<h1 class="frame__title">JavaScript</h1>
+
+		<div class="frame__inner">
+			<!-- ここに、JavaScriptを記述します -->
+			<script>
+				const count = parseInt(prompt('160円の商品をいくつ購入しますか？'));
+
+				if (Number.isFinite(count)) {
+					document.write(`${count*160}円です`);
+				} else {
+					document.write("数字を入力してください");
+				}
+
+				// parseInt('abc') = abcを整数に変換する
+				// Number.isFinite(abc) = abcが数字かどうか確認するもの
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
