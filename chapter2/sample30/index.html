@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Udemy</title>
+
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+	<div class="frame">
+	<h1 class="frame__title">JavaScript</h1>
+
+		<div class="frame__inner">
+				<p id="output"></p>
+			<!-- ここに、JavaScriptを記述します -->
+			<script>
+				const url = 'locations.json';
+
+				const getLocations = () => {													// 関数準備
+					return new Promise(function (resoluve) {						// 通信を行う箇所
+						let xhr = new XHLHttpRequest();										// XMLHttpRequestで通信を行う
+						xhr.open('GET', url);															
+						xhr.send();																				// jsonデータを読み込む
+						
+						xhr.onreadystatechange = () => {
+							if (xhr.readyState === 4 && xhr.status === 200) {
+								let result = JSON.parse(xhr.responseText);
+								resolve(result);
+							}
+						}
+					})
+				}
+			</script>
+		</div>
+	</div>
+</body>
+
+</html>
